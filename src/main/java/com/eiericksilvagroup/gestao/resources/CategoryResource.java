@@ -1,4 +1,4 @@
-package com.eiericksilvagroup.gestao.controllers;
+package com.eiericksilvagroup.gestao.resources;
 
 import java.util.List;
 
@@ -8,25 +8,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.eiericksilvagroup.gestao.entities.Product;
-import com.eiericksilvagroup.gestao.services.ProductService;
+
+import com.eiericksilvagroup.gestao.entities.Category;
+import com.eiericksilvagroup.gestao.services.CategoryService;
 
 @RestController
-@RequestMapping(value = "/products")
-public class ProductController {
+@RequestMapping(value = "/categories")
+public class CategoryResource {
 
     @Autowired
-    private ProductService service;
+    private CategoryService service;
 
     @GetMapping
-    public ResponseEntity<List<Product>> findAll() {
-        List<Product> list = service.findAll();
+    public ResponseEntity<List<Category>> findAll() {
+        List<Category> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Product> findById(@PathVariable Long id) {
-        Product obj = service.findById(id);
+    public ResponseEntity<Category> findById(@PathVariable Long id) {
+        Category obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 

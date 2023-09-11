@@ -1,4 +1,4 @@
-package com.eiericksilvagroup.gestao.controllers.exceptions;
+package com.eiericksilvagroup.gestao.resources.exceptions;
 
 import java.io.Serializable;
 import java.time.Instant;

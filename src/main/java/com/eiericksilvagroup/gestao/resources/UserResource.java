@@ -1,4 +1,4 @@
-package com.eiericksilvagroup.gestao.controllers;
+package com.eiericksilvagroup.gestao.resources;
 
 import java.net.URI;
 import java.util.List;
@@ -20,7 +20,7 @@ import com.eiericksilvagroup.gestao.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
-public class UserController {
+public class UserResource {
 
     @Autowired
     private UserService service;
